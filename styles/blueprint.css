@@ -65,30 +65,6 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   word-wrap: break-word;
 }
 
-/* Hand-drawn Doodle Animations */
-@keyframes sketch-wobble {
-  0% {
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-    transform: rotate(0deg);
-  }
-  25% {
-    border-radius: 20px 255px 20px 25px / 250px 25px 225px 25px;
-    transform: rotate(-0.15deg);
-  }
-  50% {
-    border-radius: 255px 25px 225px 20px / 25px 225px 20px 255px;
-    transform: rotate(0.15deg);
-  }
-  75% {
-    border-radius: 25px 18px 255px 15px / 20px 255px 18px 225px;
-    transform: rotate(-0.1deg);
-  }
-  100% {
-    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
-    transform: rotate(0deg);
-  }
-}
-
 /* Blueprint Header & Technical Stamps */
 .blueprint-stamp {
   display: inline-flex;
@@ -116,24 +92,38 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   line-height: 1.35;
 }
 
-/* Sketchy Blueprint Cards */
+/* Sketchy Blueprint Cards - Siluetas orgánicas estáticas para máximo rendimiento (60fps en móviles) */
 .blueprint-card {
   background: var(--bp-card-bg);
   border: 2px solid var(--bp-card-border);
   border-radius: var(--rough-radius-1);
   padding: clamp(1.2rem, 3.5vw, 2rem);
   position: relative;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-  animation: sketch-wobble 8s infinite alternate ease-in-out;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
   display: flex;
   flex-direction: column;
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 380px;
+}
+
+/* Variación orgánica individual sin costo de repintado en runtime */
+.blueprint-card:nth-child(3n+1) {
+  border-radius: var(--rough-radius-1);
+}
+
+.blueprint-card:nth-child(3n+2) {
+  border-radius: var(--rough-radius-2);
+}
+
+.blueprint-card:nth-child(3n+3) {
+  border-radius: var(--rough-radius-3);
 }
 
 .blueprint-card:hover {
   border-color: var(--ink-cyan);
-  box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
-  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 8px 24px rgba(0, 240, 255, 0.2);
+  transform: translateY(-3px);
 }
 
 /* Corner Crosshairs like Architectural CAD/Plans */
@@ -157,6 +147,95 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   font-size: 14px;
   color: var(--ink-blue);
   opacity: 0.6;
+}
+
+/* Clases semánticas para acelerar el renderizado DOM de las tarjetas */
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.card-title-tech {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.card-margin-note {
+  margin: 0.75rem 0 1.25rem;
+}
+
+.card-annotation-text {
+  font-family: var(--font-hand);
+  color: var(--ink-amber);
+  font-size: 1.15rem;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.card-desc-tech {
+  color: var(--ink-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.card-pricing-box {
+  margin-bottom: 1.25rem;
+  padding: 0.75rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  border: 1px dashed var(--bp-card-border);
+}
+
+.card-pricing-label {
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  color: var(--ink-cyan);
+  display: block;
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+}
+
+.card-pricing-text {
+  font-size: 0.85rem;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+.card-features-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.card-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--ink-muted);
+}
+
+.card-feature-check {
+  color: var(--ink-cyan);
+  font-family: var(--font-tech);
+  font-weight: bold;
+}
+
+.card-action-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--bp-card-border);
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* Notebook Sticky Note (Nota al margen) */
@@ -184,7 +263,8 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   padding: clamp(1.25rem, 4vw, 2.5rem);
   margin: 3.5rem 0;
   position: relative;
-  animation: sketch-wobble 10s infinite ease-in-out;
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 400px;
 }
 
 .cuba-section::before {
@@ -227,18 +307,22 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   border-radius: var(--rough-radius-1);
   font-family: var(--font-body);
   font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
-  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
   text-decoration: none;
-  animation: sketch-wobble 7s infinite ease-in-out;
   text-align: center;
 }
 
 .btn-whatsapp:hover {
   background: #1eb855;
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(37, 211, 102, 0.45);
   color: #000 !important;
+}
+
+.btn-whatsapp:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
 }
 
 .btn-blueprint {
@@ -255,7 +339,7 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
-  transition: all 0.2s ease;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
   white-space: nowrap;
 }
 
@@ -263,6 +347,10 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   background: rgba(0, 240, 255, 0.12);
   box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
   transform: translateY(-2px);
+}
+
+.btn-blueprint:active {
+  transform: translateY(0);
 }
 
 /* Grid de Servicios Adaptativo */
@@ -288,16 +376,18 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   padding: clamp(1.2rem, 3vw, 1.5rem);
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   position: relative;
   overflow: hidden;
+  content-visibility: auto;
+  contain-intrinsic-size: auto none auto 320px;
 }
 
 .demo-card:hover {
   border-color: var(--ink-amber);
   border-style: solid;
-  transform: translateY(-4px);
-  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.2);
 }
 
 .demo-preview-frame {
@@ -325,6 +415,46 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   font-size: 0.65rem;
   padding: 0.15rem 0.5rem;
   border-radius: 4px;
+}
+
+.demo-card-title {
+  font-size: 1.15rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.demo-card-desc {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.demo-bullets-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.demo-bullet-item {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.demo-bullet-dot {
+  color: var(--ink-amber);
+}
+
+.demo-actions-row {
+  display: flex;
+  gap: 0.75rem;
 }
 
 /* ==========================================================================
@@ -458,5 +588,15 @@ h1, h2, h3, h4, h5, h6, p, span, a, li {
   .demos-grid {
     grid-template-columns: repeat(3, 1fr) !important;
     gap: 2rem !important;
+  }
+}
+
+/* 5. ACCESIBILIDAD Y RENDIMIENTO (PREFERS-REDUCED-MOTION) */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
