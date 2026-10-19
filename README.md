@@ -1,123 +1,69 @@
-# Catálogo de Servicios y Soluciones Tecnológicas
+# Services Catalogue — Cuaderno Técnico & Soluciones Web
 
-> Plataforma web moderna e interactiva diseñada para presentar y cotizar servicios de desarrollo web, software a medida, infraestructura de servidores, VPS, soluciones remotas, CCM y gestión de dominios para **clientes y contratistas**.
-
----
-
-## 🚀 Alcance del Catálogo
-
-El catálogo reúne de manera estructurada las principales líneas de negocio tecnológicas:
-
-1. **Servicios Web**:
-   - Desarrollo Web Corporativo y Portales.
-   - E-Commerce con integración de pasarelas de pago y logística.
-   - Auditorías de rendimiento Core Web Vitals y optimización SEO técnica.
-
-2. **Software & Desarrollo**:
-   - Desarrollo de Software a Medida (Web, APIs, arquitecturas modulares).
-   - Integración de APIs RESTful, GraphQL y Webhooks con ERPs/CRMs.
-   - Automatización de procesos mediante RPA y scripting programado.
-
-3. **Soluciones Remotas**:
-   - Redes Privadas Virtuales corporativas (VPN WireGuard / IPsec / OpenVPN) con Zero Trust y 2FA.
-   - Mesa de ayuda y soporte técnico especializado L1, L2 y L3.
-   - Entornos de Escritorio Remoto centralizado (RDP / VDI) para contratistas.
-
-4. **Servidores & Cloud**:
-   - Administración SysAdmin en Linux (Ubuntu, Debian, AlmaLinux) y Windows Server.
-   - Hardening perimetral, cortafuegos, Docker y monitoreo de disponibilidad.
-   - Migración de infraestructuras entre proveedores con mínima o nula interrupción (Zero Downtime).
-
-5. **VPS (Servidores Privados Virtuales)**:
-   - Aprovisionamiento de VPS de alto rendimiento con almacenamiento NVMe y virtualización KVM.
-   - Implementación de paneles de control (cPanel, Plesk, CloudPanel, Webmin).
-   - Planes de Backup 3-2-1 automatizados y recuperación ante desastres (DRP).
-
-6. **CCM (Customer Communication Management) & Telefonía**:
-   - Canales omnicanal integrados (WhatsApp Business API oficial, SMS y Email transaccional).
-   - Centrales telefónicas virtuales PBX / VoIP en la nube (Asterisk, FreePBX, Cisco CallManager).
-   - Gestión automatizada de comprobantes, facturas electrónicas y documentos dinámicos en PDF.
-
-7. **Dominios & DNS**:
-   - Registro, transferencia y gestión de portafolios de dominios con Whois Privacy.
-   - Configuración DNS Anycast y protección contra suplantación (SPF, DKIM, DMARC, DNSSEC).
-   - Certificados digitales SSL/TLS Wildcard con renovación automática.
+> Plataforma web interactiva con estética de **plano de arquitecto y libreta de notas de ingeniería**, diseñada para brindar asesoría técnica transparente, desarrollo web y administración de servidores para clientes internacionales y la realidad de **Cuba**.
 
 ---
 
-## 🛠️ Tecnologías Empleadas
+## 📐 Propuesta de Valor & Filosofía
 
-Construido siguiendo los estándares web más modernos, sin dependencias pesadas:
-
-- **Estructura**: HTML5 semántico con elementos interactivos nativos (`<dialog>`, `::backdrop`).
-- **Estilos**: Vanilla CSS con variables CSS personalizadas, diseño oscuro (*dark mode*), acentos cian/índigo, efectos *glassmorphism* y micro-animaciones fluidas.
-- **Lógica**: JavaScript Vanilla estructurado modularmente (`data.js`, `catalogue.js`, `modal.js`).
-- **Rendimiento**: 100% estático, ultra-ligero y listo para ser distribuido a través de cualquier CDN o GitHub Pages sin requerir compilación ni Node.js.
+1. **Tutoría & Asesoría Inicial 100% Gratuita**:
+   - Explicamos en lenguaje claro cómo funciona internet, qué es un hosting, un dominio y si tu negocio realmente necesita una web antes de hacer cualquier inversión.
+2. **Desarrollo Web & Software a Medida**:
+   - Creación de páginas web de alta velocidad, aplicaciones a medida y futuras licencias de software industrial desarrolladas por nuestro grupo madre.
+3. **Servidores & Hostinger / VPS**:
+   - Puesta a punto y hardening. Regla clara: **el servicio de montaje se paga primero** y el mantenimiento mensual es opcional pero recomendado.
+4. **Hablemos Claro: Para Nuestra Gente en Cuba 🇨🇺**:
+   - Diagnóstico honesto de viabilidad técnica tomando en cuenta las limitaciones reales del país (cortes eléctricos, Nauta Hogar, IPs dinámicas).
+   - Alternativas viables: Servidores locales en PC con Nauta Hogar/DDNS, arquitecturas offline-first e intranets comerciales.
+5. **Demos Visuales Estáticas (`demos/`)**:
+   - Prototipos de muestra para apreciar el diseño de interfaces (UI/UX) sin exponer código fuente ni lógica de backend de la empresa.
+6. **Canal Directo por WhatsApp**:
+   - Contacto directo a **WhatsApp Business (+53 55608402)** sin intermediación de formularios o modales complejos.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 🎨 Estética & Diseño Visual
+
+- **Plano de Arquitecto (Blueprint)**: Fondo azul pizarra con cuadrícula técnica de ingeniería.
+- **Tipografía Híbrida**: Código y sellos técnicos en *JetBrains Mono*, notas manuscritas al margen en *Architects Daughter* y lectura limpia en *Plus Jakarta Sans*.
+- **Bordes Garabateados (Hand-Drawn Wobble)**: Micro-animaciones en CSS que simulan trazos trazados a mano en constante movimiento.
+
+---
+
+## 📂 Estructura del Repositorio
 
 ```text
 services-catalogue/
-├── index.html              # Página principal del catálogo
+├── index.html              # Página principal (Blueprint & Cuaderno técnico)
+├── demos/                  # Maquetas estáticas para clientes
+│   ├── dashboard-preview.html
+│   ├── catalog-preview.html
+│   └── landing-preview.html
 ├── styles/
-│   ├── main.css            # Tokens de diseño, tipografía y estilos base
-│   ├── components.css      # Componentes (Navbar, Hero, Tarjetas, Filtros, Modales)
-│   └── animations.css      # Efectos visuales y micro-interacciones
+│   ├── blueprint.css       # Retícula de plano, notas a mano y bordes doodle
+│   ├── main.css            # Base de diseño y variables
+│   ├── components.css      # Componentes adaptables
+│   └── animations.css      # Animaciones visuales
 ├── js/
-│   ├── data.js             # Base de datos centralizada de servicios y categorías
-│   ├── catalogue.js        # Lógica reactiva de filtros, búsqueda y renderizado
-│   └── modal.js            # Control de modales (<dialog>) y formulario de cotización
-├── .gitignore              # Archivos ignorados por Git
-└── README.md               # Documentación general del repositorio
+│   ├── data.js             # Fuente única: datos, WhatsApp config y demos
+│   └── catalogue.js        # Lógica de renderizado y enlaces dinámicos a WhatsApp
+├── .github/
+│   ├── workflows/          # Workflow para proteger main
+│   └── pull_request_template.md
+├── CONTRIBUTING.md         # Guía de ramas, commits atómicos y PRs
+├── AGENTS.md               # Guía de arquitectura y restricciones
+└── README.md               # Documentación general
 ```
-
----
-
-## 💻 Vista Previa Local
-
-Para visualizar el catálogo en tu equipo local:
-
-### Opción 1: Abrir directamente en el navegador
-Haz doble clic sobre el archivo `index.html` o ábrelo desde tu navegador web preferido.
-
-### Opción 2: Usar un servidor local ligero
-Con Python:
-```bash
-python -m http.server 8080
-```
-O con Node.js (`npx`):
-```bash
-npx serve .
-```
-Luego visita `http://localhost:8080` en tu navegador.
 
 ---
 
 ## 🌐 Publicación en GitHub Pages
 
-Dado que es un sitio estático puro, puedes alojarlo gratis en **GitHub Pages**:
-
-1. Sube los cambios a la rama principal:
-   ```bash
-   git branch -M main
-   git push -u origin main
-   ```
-2. En GitHub, dirígete a: **Settings** > **Pages**.
-3. En **Source**, selecciona **Deploy from a branch**.
-4. Selecciona la rama `main` y la carpeta `/ (root)`.
-5. Haz clic en **Save**. En un par de minutos tu catálogo estará publicado en una URL pública como:
-   `https://fredocubap.github.io/Services-Catalogue/`
+El sitio se publica de manera automática en **GitHub Pages**:
+👉 **`https://fredocubap.github.io/Services-Catalogue/`**
 
 ---
 
-## 🤝 Contribuciones & Reglas de Desarrollo
+## 🤝 Reglas de Contribución
 
-Este repositorio sigue directrices estrictas de calidad, gobernanza y ramas atómicas:
-
-- Consulta **[`CONTRIBUTING.md`](CONTRIBUTING.md)** para la convención de ramas (`<prefijo>/<ref>-descripcion`), commits atómicos (`<prefijo>: <verbo en 3ª persona>`), rebase workflow y límite de 500 líneas por PR.
-- Consulta **[`AGENTS.md`](AGENTS.md)** para detalles de arquitectura técnica y la lista de restricciones (*"Nunca"*).
-- Todo Pull Request utiliza la plantilla obligatoria en [`.github/pull_request_template.md`](.github/pull_request_template.md).
-- La rama `main` cuenta con protección automatizada para bloquear pushes directos sin PR.
-
+Consulta **[`CONTRIBUTING.md`](CONTRIBUTING.md)** y **[`AGENTS.md`](AGENTS.md)** para la convención de commits atómicos (`<prefijo>: <verbo en 3ª persona>`), ramas (`<prefijo>/<ref>-descripcion`) y plantilla de Pull Request.

@@ -6,65 +6,61 @@ Guía de desarrollo para agentes de IA y colaboradores en este repositorio. Reco
 
 ## 📌 Proyecto & Propósito
 
-Catálogo web interactivo y responsivo de servicios informáticos y soluciones cloud para **clientes y contratistas**. 
-Abarca las líneas de:
-- Servicios Web
-- Software & Desarrollo
-- Soluciones Remotas
-- Servidores & Cloud
-- VPS (Servidores Privados Virtuales)
-- CCM (Customer Communication Management) & Telefonía IP
-- Dominios & DNS
+**Services Catalogue** es un cuaderno técnico digital interactivo con estética de **plano de arquitecto / libreta de notas de ingeniería con bordes garabateados dinámicos**, diseñado para brindar asesoría transparente, servicios web reales y administración de servidores para clientes internacionales y especialmente para la realidad de **Cuba**.
 
-El proyecto está diseñado para funcionar como un sitio estático puro, desplegable de forma directa y gratuita en **GitHub Pages**.
+Principales pilares:
+1. **Tutoría & Asesoramiento Inicial 100% Gratuito:** Explicar cómo funciona internet y qué se necesita realmente antes de gastar dinero.
+2. **Desarrollo Web & Software a Medida:** Sitios ligeros, aplicaciones a medida y futuras licencias de software propio del grupo madre.
+3. **Servidores & Hostinger / VPS:** Regla clara de pago previo del servicio de montaje + mantenimiento mensual opcional.
+4. **Hablemos Claro (Para Cuba):** Factibilidad honesta sobre la realidad de infraestructura en la isla (cortes eléctricos, Nauta Hogar, servidores locales en PC con DDNS, sistemas offline-first).
+5. **Demos Visuales Estáticas:** Maquetas en `/demos/` para apreciar diseño y ergonomía visual sin exponer código fuente ni lógica de backend.
+6. **Conversión Directa:** Cero modales o formularios que queden en el limbo; cada llamada a la acción abre directamente **WhatsApp Business** (+53 55608402) con mensajes pre-redactados.
 
 ---
 
 ## 🏛️ Arquitectura & Dónde está cada cosa
 
-- **`js/data.js`**: **Única fuente de la verdad de los datos.** Contiene `SERVICES_DATA` y `CATEGORIES_DATA`. Al agregar o editar un servicio aquí, los contadores de categorías, filtros, buscador y modales se actualizan de forma automática.
-- **`js/catalogue.js`**: Lógica reactiva en cliente para el renderizado de tarjetas, buscador instantáneo (con debounce), selección de categoría y filtrado por perfil (Clientes / Contratistas). Incluye el atajo de teclado `/` para enfocar la búsqueda.
-- **`js/modal.js`**: Controlador de los elementos nativos `<dialog>` (`#service-modal` y `#quote-modal`). Gestiona el *light dismiss* (cierre al hacer clic fuera del diálogo), cierre con tecla `Esc` y envío simulado del formulario con toast feedback.
+- **`js/data.js`**: **Fuente de la verdad.** Contiene la configuración global (`CONFIG` con número de WhatsApp y constructor de URL `buildWhatsAppUrl`), el catálogo `SERVICES_DATA` y las maquetas `DEMOS_DATA`.
+- **`js/catalogue.js`**: Renderizado de tarjetas blueprint y de la galería de maquetas estáticas, vinculando dinámicamente cada acción a WhatsApp.
+- **`demos/`**:
+  - `dashboard-preview.html`: Prototipo visual estático de panel administrativo/ERP.
+  - `catalog-preview.html`: Prototipo visual de escaparate digital con pedidos por WhatsApp.
+  - `landing-preview.html`: Prototipo de página de captación de servicios.
 - **`styles/`**:
-  - `main.css`: Variables CSS (*design tokens*), tipografía *Plus Jakarta Sans*, reseteo y clases utilitarias (`.badge`, `.btn`, `.text-gradient`).
-  - `components.css`: Navbar, hero con estadísticas en vivo, barra de controles, tarjetas interactivas con efecto hover, modales y pie de página.
-  - `animations.css`: Keyframes para desvanecimientos, micro-interacciones, efectos de brillo (*glow*) y notificaciones *toast*.
-- **`index.html`**: Estructura semántica accesible con soporte SEO y etiquetas OpenGraph.
+  - `blueprint.css`: Retícula de plano de arquitecto, tipografía técnica (`JetBrains Mono`), fuente manuscrita (`Architects Daughter`) y animación de bordes garabateados (`sketch-wobble`).
+  - `main.css`, `components.css`, `animations.css`: Base visual y utilitarios.
+- **`index.html`**: Página principal accesible, responsiva y semántica.
 
 ---
 
 ## ⚙️ Reglas de Código & Convenciones
 
 1. **Vanilla First**:
-   - Mantener la arquitectura en **HTML5 semántico, Vanilla CSS y Vanilla JS**.
-   - No añadir frameworks (React, Vue, Angular) ni preprocesadores pesados innecesarios a menos que sea un requerimiento explícito.
-   - Todo debe ejecutarse de forma inmediata abriendo `index.html` o con cualquier servidor HTTP local (`python -m http.server`).
+   - Todo debe mantenerse en **HTML5, Vanilla CSS y Vanilla JS**.
+   - Cero dependencias pesadas de npm ni compiladores complejos.
+   - Todo corre de inmediato al abrir `index.html` o con GitHub Pages.
 
-2. **Estética y UI**:
-   - Respetar la estética *dark mode* premium con fondos oscuros profundos (`#0a0e1a`), acentos cian (`#06b6d4`), violeta/índigo (`#6366f1`) y *glassmorphism* suave.
-   - Mantener siempre diseño *mobile-first* y accesible.
-   - No usar imágenes genéricas rotas o marcadores de posición sin formato.
+2. **Estética Blueprint & Notas**:
+   - Mantener la estética técnica de cuadrícula azul/carbón, sellos técnicos (`[PLANO 01]`), notas al margen y animaciones discretas de bordes dibujados a mano.
 
-3. **Estructura de Datos**:
-   - Todo servicio en `SERVICES_DATA` debe contar con: `id`, `category`, `categoryName`, `title`, `shortDesc`, `fullDesc`, `targetAudience` (array con "Clientes" y/o "Contratistas"), `badge`, `icon` (SVG en línea limpio), `tags`, `features` (mínimo 3 viñetas), `deliverables` y `sla`.
+3. **Protección Intelectual**:
+   - Todas las demos públicas deben permanecer estrictamente estáticas para salvaguardar la lógica y el código fuente propietario.
 
 ---
 
 ## 🌿 Flujo Git & Contribuciones
 
 Consulta siempre [`CONTRIBUTING.md`](CONTRIBUTING.md) antes de crear ramas o redactar commits:
-
-- **Ramas:** `<prefijo>/<ref>-descripcion-breve` (ejemplo: `feat/gh-12-filtro-precio-vps`). Siempre en minúsculas y formato ASCII.
-- **Commits atómicos:** `<prefijo>: <verbo en 3ª persona del presente> <descripción corta>` (ejemplo: `feat: agrega selector de moneda para cotizaciones`). Máximo 72 caracteres y sin paréntesis.
-- **Sin `Co-Authored-By`** en los mensajes de commit.
-- **Pull Requests:** Máximo 500 líneas cambiadas recomendadas. Llenar siempre la plantilla `.github/pull_request_template.md`.
+- **Ramas:** `<prefijo>/<ref>-descripcion-breve`
+- **Commits atómicos:** `<prefijo>: <verbo en 3ª persona del presente> <descripción corta>` (máximo 72 caracteres).
+- **Sin `Co-Authored-By`**.
+- **Pull Requests:** Máximo 500 líneas cambiadas recomendadas. Llenar siempre `.github/pull_request_template.md`.
 
 ---
 
 ## 🚫 Lista de "Nunca"
 
-- **Nunca** hacer push directo a la rama `main`: todo entra por Pull Request.
-- **Nunca** agregar librerías externas o frameworks pesados vía npm que rompan la portabilidad de GitHub Pages.
-- **Nunca** modificar o agregar servicios de forma hardcodeada directamente en `index.html`: agrégalos a `js/data.js`.
-- **Nunca** usar títulos de commit vacíos o genéricos como `Update index.html`, `wip`, `fixes` o `cambios`.
-- **Nunca** añadir `Co-Authored-By` a los commits.
+- **Nunca** hacer push directo a `main`: todo entra por PR (protegido por `.github/workflows/protect-main.yml`).
+- **Nunca** implementar formularios que simulen envío sin canal real: todo contacto va directo a WhatsApp.
+- **Nunca** pintar paisajes irreales sobre la infraestructura de Cuba: se habla con transparencia técnica.
+- **Nunca** exponer código fuente o lógica de backend en las carpetas de demostración visual.

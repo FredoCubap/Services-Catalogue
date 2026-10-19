@@ -1,0 +1,309 @@
+/* ==========================================================================
+   BLUEPRINT & HAND-DRAWN SKETCH THEME
+   Estética de Cuaderno de Ingeniería / Plano de Arquitecto con bordes garabateados
+   ========================================================================== */
+
+:root {
+  /* Blueprint & Ink Palette */
+  --bp-bg: #0b1320;
+  --bp-grid-major: rgba(56, 189, 248, 0.15);
+  --bp-grid-minor: rgba(56, 189, 248, 0.05);
+  --bp-card-bg: rgba(13, 27, 42, 0.85);
+  --bp-card-border: rgba(56, 189, 248, 0.4);
+
+  /* Pen & Pencil Inks */
+  --ink-blue: #38bdf8;
+  --ink-cyan: #00f0ff;
+  --ink-white: #f8fafc;
+  --ink-pencil: #cbd5e1;
+  --ink-muted: #94a3b8;
+  --ink-amber: #fbbf24;
+  --ink-emerald: #34d399;
+  --ink-cuba: #f87171;
+
+  /* Highlighter & Notes */
+  --note-bg: rgba(254, 240, 138, 0.08);
+  --note-border: #fef08a;
+
+  /* Typography */
+  --font-tech: 'JetBrains Mono', 'Courier New', monospace;
+  --font-hand: 'Architects Daughter', cursive, sans-serif;
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+  /* Sketch Border Radii */
+  --rough-radius-1: 255px 15px 225px 15px / 15px 225px 15px 255px;
+  --rough-radius-2: 20px 255px 20px 25px / 250px 25px 225px 25px;
+  --rough-radius-3: 25px 18px 255px 15px / 20px 255px 18px 225px;
+}
+
+/* Background Blueprint Grid */
+body {
+  background-color: var(--bp-bg) !important;
+  background-image: 
+    linear-gradient(var(--bp-grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-grid-major) 1px, transparent 1px),
+    linear-gradient(var(--bp-grid-minor) 1px, transparent 1px),
+    linear-gradient(90deg, var(--bp-grid-minor) 1px, transparent 1px) !important;
+  background-size: 80px 80px, 80px 80px, 16px 16px, 16px 16px !important;
+  background-position: -1px -1px, -1px -1px, -1px -1px, -1px -1px !important;
+  color: var(--ink-white) !important;
+  font-family: var(--font-body);
+}
+
+/* Hand-drawn Doodle Animations */
+@keyframes sketch-wobble {
+  0% {
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    transform: rotate(0deg);
+  }
+  25% {
+    border-radius: 20px 255px 20px 25px / 250px 25px 225px 25px;
+    transform: rotate(-0.15deg);
+  }
+  50% {
+    border-radius: 255px 25px 225px 20px / 25px 225px 20px 255px;
+    transform: rotate(0.15deg);
+  }
+  75% {
+    border-radius: 25px 18px 255px 15px / 20px 255px 18px 225px;
+    transform: rotate(-0.1deg);
+  }
+  100% {
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes dash-drift {
+  0% {
+    background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  }
+  100% {
+    background-position: 40px 0, 100% 40px, calc(100% - 40px) 100%, 0 calc(100% - 40px);
+  }
+}
+
+/* Blueprint Header & Technical Stamps */
+.blueprint-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-blue);
+  border: 1.5px dashed var(--ink-blue);
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--rough-radius-1);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.handwritten {
+  font-family: var(--font-hand);
+  color: var(--ink-amber);
+  font-size: 1.35rem;
+  display: inline-block;
+  transform: rotate(-2deg);
+}
+
+/* Sketchy Blueprint Cards */
+.blueprint-card {
+  background: var(--bp-card-bg);
+  border: 2px solid var(--bp-card-border);
+  border-radius: var(--rough-radius-1);
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  animation: sketch-wobble 8s infinite alternate ease-in-out;
+}
+
+.blueprint-card:hover {
+  border-color: var(--ink-cyan);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.3);
+  transform: translateY(-4px) scale(1.01);
+}
+
+/* Corner Crosshairs like Architectural CAD/Plans */
+.blueprint-card::before {
+  content: '+';
+  position: absolute;
+  top: 6px;
+  left: 8px;
+  font-family: var(--font-tech);
+  font-size: 14px;
+  color: var(--ink-blue);
+  opacity: 0.6;
+}
+
+.blueprint-card::after {
+  content: '+';
+  position: absolute;
+  bottom: 6px;
+  right: 8px;
+  font-family: var(--font-tech);
+  font-size: 14px;
+  color: var(--ink-blue);
+  opacity: 0.6;
+}
+
+/* Scribbled Animated Border Outline */
+.doodle-border {
+  position: relative;
+  border: 2px dashed rgba(56, 189, 248, 0.6);
+  border-radius: var(--rough-radius-2);
+  animation: sketch-wobble 6s infinite ease-in-out;
+}
+
+/* Notebook Sticky Note (Nota al margen) */
+.margin-note {
+  background: rgba(254, 240, 138, 0.07);
+  border-left: 4px solid var(--ink-amber);
+  padding: 1.25rem 1.5rem;
+  border-radius: 4px var(--rough-radius-1);
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.margin-note-title {
+  font-family: var(--font-hand);
+  color: var(--ink-amber);
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+/* Special Cuba Honest Section */
+.cuba-section {
+  background: rgba(248, 113, 113, 0.05);
+  border: 2px dashed rgba(248, 113, 113, 0.5);
+  border-radius: var(--rough-radius-3);
+  padding: 2.5rem;
+  margin: 3.5rem 0;
+  position: relative;
+  animation: sketch-wobble 10s infinite ease-in-out;
+}
+
+.cuba-section::before {
+  content: '[ PLANO ESPECIAL: CUBA // REALIDAD DE INFRAESTRUCTURA ]';
+  position: absolute;
+  top: -12px;
+  left: 24px;
+  background: var(--bp-bg);
+  padding: 0 10px;
+  font-family: var(--font-tech);
+  font-size: 0.75rem;
+  color: var(--ink-cuba);
+  letter-spacing: 0.1em;
+}
+
+.cuba-badge {
+  background: rgba(248, 113, 113, 0.15);
+  color: var(--ink-cuba);
+  border: 1px solid var(--ink-cuba);
+  font-family: var(--font-tech);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--rough-radius-1);
+  font-size: 0.75rem;
+}
+
+/* WhatsApp Direct CTA Button */
+.btn-whatsapp {
+  background: #25d366;
+  color: #0b1320 !important;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--rough-radius-1);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  animation: sketch-wobble 7s infinite ease-in-out;
+}
+
+.btn-whatsapp:hover {
+  background: #1eb855;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.55);
+  color: #000 !important;
+}
+
+.btn-blueprint {
+  background: transparent;
+  color: var(--ink-cyan) !important;
+  border: 1.5px solid var(--ink-cyan);
+  border-radius: var(--rough-radius-2);
+  padding: 0.65rem 1.25rem;
+  font-family: var(--font-tech);
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-blueprint:hover {
+  background: rgba(0, 240, 255, 0.12);
+  box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Demos Visual Section */
+.demos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.demo-card {
+  background: rgba(13, 27, 42, 0.9);
+  border: 2px dashed rgba(56, 189, 248, 0.4);
+  border-radius: var(--rough-radius-2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-card:hover {
+  border-color: var(--ink-amber);
+  border-style: solid;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(251, 191, 36, 0.2);
+}
+
+.demo-preview-frame {
+  height: 160px;
+  background: rgba(11, 19, 32, 0.9);
+  border: 1px solid var(--bp-grid-major);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-disclaimer-pill {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(251, 191, 36, 0.2);
+  border: 1px solid var(--ink-amber);
+  color: var(--ink-amber);
+  font-family: var(--font-tech);
+  font-size: 0.65rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}

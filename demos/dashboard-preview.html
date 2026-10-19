@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maqueta Visual: Panel Administrativo & Operaciones</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/blueprint.css">
+  <style>
+    .watermark-banner {
+      background: #f59e0b;
+      color: #000;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-family: var(--font-tech);
+      letter-spacing: 0.05em;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .mockup-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+      font-size: 0.85rem;
+    }
+    .mockup-table th, .mockup-table td {
+      padding: 0.75rem 1rem;
+      border: 1px solid rgba(56, 189, 248, 0.2);
+      text-align: left;
+    }
+    .mockup-table th {
+      background: rgba(56, 189, 248, 0.1);
+      color: var(--ink-cyan);
+      font-family: var(--font-tech);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watermark-banner">
+    ⚠️ DEMO VISUAL ESTÁTICA // MOCKUP PARA APRECIACIÓN DE DISEÑO // SIN CONEXIÓN A DATOS REALES
+  </div>
+
+  <div class="preview-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="../index.html" class="btn-blueprint">← Volver al Catálogo Principal</a>
+      <span class="blueprint-stamp">REF: MOCKUP-DASH-01</span>
+    </div>
+
+    <div class="blueprint-card" style="margin-bottom: 2rem;">
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Panel de Control Operativo (Prototipo)</h2>
+      <p style="color: var(--ink-muted); font-size: 0.9rem;">
+        Esta vista ilustra cómo diseñamos interfaces de control para negocios y contratistas: claras, con métricas en tiempo real, estados de proyectos y accesibilidad visual sin saturación.
+      </p>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--bp-card-border); border-radius: 8px;">
+          <span style="font-size: 0.75rem; color: var(--ink-muted); font-family: var(--font-tech);">PROYECTOS ACTIVOS</span>
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--ink-cyan); margin-top: 0.25rem;">14</div>
+          <span style="font-size: 0.75rem; color: var(--ink-emerald);">+2 este mes</span>
+        </div>
+        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--bp-card-border); border-radius: 8px;">
+          <span style="font-size: 0.75rem; color: var(--ink-muted); font-family: var(--font-tech);">EQUIPO EN LÍNEA</span>
+          <div style="font-size: 1.8rem; font-weight: 800; color: #fff; margin-top: 0.25rem;">8 / 10</div>
+          <span style="font-size: 0.75rem; color: var(--ink-muted);">Contratistas sincronizados</span>
+        </div>
+        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--bp-card-border); border-radius: 8px;">
+          <span style="font-size: 0.75rem; color: var(--ink-muted); font-family: var(--font-tech);">UPTIME DE SERVICIOS</span>
+          <div style="font-size: 1.8rem; font-weight: 800; color: var(--ink-emerald); margin-top: 0.25rem;">99.98%</div>
+          <span style="font-size: 0.75rem; color: var(--ink-emerald);">Hostinger / VPS óptimo</span>
+        </div>
+      </div>
+
+      <h3 style="font-size: 1.1rem; margin-top: 2rem; color: var(--ink-cyan); font-family: var(--font-tech);">
+        [ TABLA DE SEGUIMIENTO // ESTADOS DE MUESTRA ]
+      </h3>
+      <div style="overflow-x: auto;">
+        <table class="mockup-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>CLIENTE / PROYECTO</th>
+              <th>ALCANCE</th>
+              <th>INFRAESTRUCTURA</th>
+              <th>ESTADO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>PRJ-101</td>
+              <td>Constructora Metrópoli</td>
+              <td>Portal Web + CRM Clientes</td>
+              <td>VPS Ubuntu / Nginx</td>
+              <td><span class="badge badge-emerald">En Producción</span></td>
+            </tr>
+            <tr>
+              <td>PRJ-102</td>
+              <td>Logística del Caribe</td>
+              <td>App de Inventario Offline</td>
+              <td>PC Local / Intranet</td>
+              <td><span class="badge badge-cyan">En Desarrollo</span></td>
+            </tr>
+            <tr>
+              <td>PRJ-103</td>
+              <td>Consultoría Legal Gómez</td>
+              <td>Landing Page + Correo Corp.</td>
+              <td>Hostinger Compartido</td>
+              <td><span class="badge badge-emerald">Completado</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://wa.me/5355608402?text=Hola%20Fredo!%20Vi%20la%20maqueta%20del%20panel%20de%20control%20y%20quiero%20cotizar%20un%20sistema%20similar%20para%20mi%20empresa." class="btn-whatsapp">
+        Consultar con Fredo por un Sistema como este en WhatsApp
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

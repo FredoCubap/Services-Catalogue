@@ -3,292 +3,263 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Catálogo de Servicios & Soluciones Tecnológicas</title>
-  <meta name="description" content="Catálogo profesional de servicios web, desarrollo de software, soluciones remotas, administración de servidores, VPS, CCM y gestión de dominios para clientes y contratistas.">
-  <meta name="keywords" content="servicios web, desarrollo de software, soluciones remotas, servidores cloud, VPS NVMe, CCM, telefonía IP, gestión de dominios, DNS, soporte para contratistas">
-  <meta name="theme-color" content="#0a0e1a">
+  <title>Services Catalogue | Cuaderno Técnico & Soluciones Web</title>
+  <meta name="description" content="Asesoría técnica web transparente, páginas web, desarrollo de software a medida y administración de servidores Hostinger/VPS. Contacto directo por WhatsApp.">
+  <meta name="theme-color" content="#0b1320">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Catálogo de Servicios & Soluciones Tecnológicas">
-  <meta property="og:description" content="Infraestructura, desarrollo y servicios de TI de alto nivel para empresas y contratistas.">
-  <meta property="og:type" content="website">
-
-  <!-- Google Fonts: Plus Jakarta Sans -->
+  <!-- Google Fonts: JetBrains Mono (Plano/Tech) + Architects Daughter (Notas a mano) + Plus Jakarta Sans (Lectura) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <!-- CSS Stylesheets -->
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/components.css">
   <link rel="stylesheet" href="styles/animations.css">
+  <link rel="stylesheet" href="styles/blueprint.css">
 </head>
 <body>
 
   <!-- Top Navigation Bar -->
-  <header class="navbar" id="top-nav">
+  <header class="navbar" id="top-nav" style="border-bottom: 1.5px dashed var(--bp-card-border);">
     <div class="container nav-container">
-      <a href="#" class="brand" aria-label="Inicio del Catálogo de Servicios">
-        <div class="brand-icon">
+      <a href="#" class="brand" aria-label="Inicio">
+        <div class="brand-icon" style="background: var(--ink-blue); color: #0b1320;">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-            <polyline points="2 17 12 22 22 17"></polyline>
-            <polyline points="2 12 12 17 22 12"></polyline>
+            <polyline points="4 7 4 4 20 4 20 7"></polyline>
+            <line x1="9" y1="20" x2="15" y2="20"></line>
+            <line x1="12" y1="4" x2="12" y2="20"></line>
           </svg>
         </div>
         <div class="brand-text">Services<span>Catalogue</span></div>
       </a>
 
       <div class="nav-actions">
-        <button class="btn btn-outline-cyan btn-sm" onclick="window.openQuoteModal()" id="nav-quote-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        <a href="#seccion-demos" class="btn-blueprint" style="font-size: 0.8rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
           </svg>
-          Solicitar Cotización
-        </button>
+          Ver Demos
+        </a>
+        <a id="nav-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.217 8.217 0 0 1-5.83 2.42c-1.48 0-2.94-.39-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.25-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.17-.48-.29z"/>
+          </svg>
+          <span>WhatsApp Directo</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero-section">
+  <!-- Hero Section (Blueprint & Notes Style) -->
+  <section class="hero" id="hero-section" style="padding-bottom: 2rem;">
     <div class="container">
-      <div class="hero-pill">
-        <span class="badge badge-primary">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
-            <circle cx="12" cy="12" r="10"></circle>
-          </svg>
-          Catálogo Oficial TI & Soluciones Cloud
+      <div style="margin-bottom: 1.25rem;">
+        <span class="blueprint-stamp">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #25d366;"></span>
+          HOJA DE TRABAJO TÉCNICA // ATENCIÓN DIRECTA AL +53 55608402
         </span>
       </div>
 
-      <h1 class="hero-title">
-        Soluciones Tecnológicas & Servicios <span class="text-gradient">Especializados</span>
+      <h1 class="hero-title" style="font-size: clamp(2rem, 4.5vw, 3.2rem); letter-spacing: -0.02em;">
+        Cuaderno de Ingeniería & Soluciones Web <br>
+        <span class="handwritten" style="color: var(--ink-amber); margin-top: 0.5rem;">
+          "Con la verdad por delante y sin tecnicismos oscuros"
+        </span>
       </h1>
 
-      <p class="hero-subtitle">
-        Infraestructura cloud, desarrollo de software, plataformas remotas, servidores de alto rendimiento y comunicaciones corporativas diseñadas para clientes y contratistas tecnológicos.
+      <p class="hero-subtitle" style="max-width: 780px;">
+        Asesoramiento técnico personal y comprensible sobre cómo funciona internet. Desarrollamos páginas web, aplicaciones a medida y gestionamos servidores en Hostinger y VPS.
       </p>
 
-      <!-- Live Highlights / Stats -->
-      <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-value text-gradient">99.9%</span>
-          <span class="stat-label">Disponibilidad SLA</span>
+      <!-- Reglas Claras / Banner de Transparencia -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; max-width: 950px; margin: 2rem auto; text-align: left;">
+        <div style="padding: 1.25rem; background: rgba(52, 211, 153, 0.08); border: 1.5px dashed var(--ink-emerald); border-radius: var(--rough-radius-1);">
+          <span style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--ink-emerald); font-weight: 700;">PASO 01 // TRANSPARENCIA</span>
+          <h4 style="color: #fff; margin: 0.4rem 0 0.25rem;">Tutoría 100% Gratis</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">
+            Te guiamos personalmente para que entiendas qué necesitas y qué no, antes de gastar un centavo.
+          </p>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-value">24/7</span>
-          <span class="stat-label">Monitoreo & Soporte</span>
+
+        <div style="padding: 1.25rem; background: rgba(251, 191, 36, 0.08); border: 1.5px dashed var(--ink-amber); border-radius: var(--rough-radius-2);">
+          <span style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--ink-amber); font-weight: 700;">PASO 02 // REGLA CLARA</span>
+          <h4 style="color: #fff; margin: 0.4rem 0 0.25rem;">El Montaje se Paga Primero</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">
+            La configuración de servidores (Hostinger, VPS) e inicio de obra técnica requiere el pago por adelantado del servicio.
+          </p>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-value text-gradient">&lt; 30m</span>
-          <span class="stat-label">Respuesta HelpDesk</span>
+
+        <div style="padding: 1.25rem; background: rgba(56, 189, 248, 0.08); border: 1.5px dashed var(--ink-blue); border-radius: var(--rough-radius-3);">
+          <span style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--ink-cyan); font-weight: 700;">PASO 03 // CONTINUIDAD</span>
+          <h4 style="color: #fff; margin: 0.4rem 0 0.25rem;">Mantenimiento y Respaldo</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">
+            El cuidado mensual de servidores, copias de seguridad y actualizaciones es un servicio de soporte pago.
+          </p>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <span class="stat-value">100%</span>
-          <span class="stat-label">Cifrado & Seguridad</span>
-        </div>
+      </div>
+
+      <div style="margin-top: 1.5rem;">
+        <a id="hero-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.217 8.217 0 0 1-5.83 2.42c-1.48 0-2.94-.39-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.25-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.17-.48-.29z"/>
+          </svg>
+          <span>Escribirle a Fredo directamente a WhatsApp</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Catalogue Controls & Main Listing -->
+  <!-- Main Blueprint Services Listing -->
   <main class="container" id="main-content">
-    
-    <!-- Filter Controls Bar -->
-    <section class="catalogue-controls" aria-label="Controles de búsqueda y filtros del catálogo">
-      <div class="search-audience-row">
-        <!-- Search Input -->
-        <div class="search-box-wrapper">
-          <span class="search-icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="11" cy="11" r="8"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-          </span>
-          <input 
-            type="search" 
-            id="search-input" 
-            class="search-input" 
-            placeholder="Buscar por tecnología, servicio, VPS, Linux, API..." 
-            aria-label="Buscar en el catálogo de servicios"
-          >
-          <span class="search-shortcut" title="Presione la tecla / para buscar">/</span>
+
+    <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; border-bottom: 1.5px dashed var(--bp-card-border); padding-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+      <div>
+        <span class="blueprint-stamp">SECCIÓN 01 // SERVICIOS REALES</span>
+        <h2 style="font-size: 1.75rem; color: #fff; margin-top: 0.4rem;">Nuestras Soluciones de Ingeniería</h2>
+      </div>
+      <div style="font-family: var(--font-hand); color: var(--ink-amber); font-size: 1.15rem;">
+        ✍️ Cada servicio incluye contacto directo sin formularios
+      </div>
+    </div>
+
+    <!-- Dynamic Grid injected via catalogue.js -->
+    <div class="services-grid" id="services-grid"></div>
+
+    <!-- SECCIÓN ESPECIAL: HABLEMOS CLARO (PARA CUBA) -->
+    <section class="cuba-section" id="seccion-cuba">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+        <div>
+          <span class="cuba-badge">ATENCIÓN ESPECIALIZADA EN CUBA</span>
+          <h2 style="font-size: 1.85rem; color: #fff; margin-top: 0.5rem; letter-spacing: -0.02em;">
+            Hablemos Claro: Para Nuestra Gente en la Isla 🇨🇺
+          </h2>
+        </div>
+        <span class="blueprint-stamp" style="border-color: var(--ink-cuba); color: var(--ink-cuba);">
+          ANÁLISIS DE FACTIBILIDAD
+        </span>
+      </div>
+
+      <p style="font-size: 1.05rem; color: #f8fafc; line-height: 1.7; margin-bottom: 1.25rem; max-width: 950px;">
+        A nuestra gente no se le ponen límites, <strong>se le habla claro</strong>. No venimos a pintarte un paisaje idílico que no puedas sostener por culpa de la realidad eléctrica y de conectividad que vive el país cada segundo.
+      </p>
+
+      <div class="margin-note" style="border-left-color: var(--ink-cuba); background: rgba(248, 113, 113, 0.08);">
+        <div class="margin-note-title" style="color: var(--ink-cuba);">Diagnóstico de Realidad:</div>
+        <p style="font-family: var(--font-hand); color: #fecaca; font-size: 1.15rem; margin: 0; line-height: 1.5;">
+          "Si eres un cubano de a pie o un emprendedor en Cuba y necesitas una web o un sistema, nos sentamos a discutirlo con la verdad por delante: si un hosting en el extranjero es viable para ti o si la solución real y económica para tu negocio es montarte un servidor en una PC local con Nauta Hogar, DDNS o una intranet comercial offline."
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; margin: 2rem 0;">
+        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(248, 113, 113, 0.4);">
+          <h4 style="color: var(--ink-cuba); margin-bottom: 0.35rem;">1. Cero Venta de Humo</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">
+            Evaluamos si tu negocio realmente necesita pagos en divisas o si te basta un catálogo local de alta velocidad.
+          </p>
         </div>
 
-        <!-- Target Audience Toggle -->
-        <div class="audience-toggle" role="group" aria-label="Filtrar por perfil de usuario">
-          <button class="audience-btn active" data-audience="all">Todos</button>
-          <button class="audience-btn" data-audience="clients">Para Clientes</button>
-          <button class="audience-btn" data-audience="contractors">Para Contratistas</button>
+        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(248, 113, 113, 0.4);">
+          <h4 style="color: var(--ink-cuba); margin-bottom: 0.35rem;">2. Servidor en PC Local / Nauta Hogar</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">
+            Configuración de equipos locales con túneles seguros para atender tu negocio sin depender de pasarelas internacionales.
+          </p>
+        </div>
+
+        <div style="padding: 1rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed rgba(248, 113, 113, 0.4);">
+          <h4 style="color: var(--ink-cuba); margin-bottom: 0.35rem;">3. Sistemas Offline-First</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">
+            Sistemas que siguen funcionando y cobrando aunque se caiga la conexión o ocurran interrupciones.
+          </p>
         </div>
       </div>
 
-      <!-- Category Filter Pills -->
-      <nav class="category-filters" id="category-filters" aria-label="Filtro por categoría de servicio">
-        <!-- Rendered dynamically by catalogue.js -->
-      </nav>
+      <div style="text-align: right;">
+        <a id="cuba-whatsapp-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp" style="background: #ef4444; color: #fff !important;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c4.55 0 8.24 3.7 8.24 8.24 0 2.2-.86 4.28-2.42 5.83a8.217 8.217 0 0 1-5.83 2.42c-1.48 0-2.94-.39-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.39c0-4.54 3.7-8.24 8.25-8.24zm4.52 11.66c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.25-.75-.67-1.26-1.5-1.4-1.75-.15-.25-.02-.39.11-.51.11-.11.25-.29.38-.44.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.32-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.78 2.72 4.31 3.81.6.26 1.07.41 1.44.53.61.19 1.16.17 1.6.1.49-.07 1.47-.6 1.68-1.18.21-.59.21-1.09.15-1.19-.06-.1-.23-.17-.48-.29z"/>
+          </svg>
+          <span>Hablar con Fredo sobre mi proyecto en Cuba</span>
+        </a>
+      </div>
     </section>
 
-    <!-- Services Results Section -->
-    <section aria-label="Listado de servicios disponibles">
-      <div class="results-header">
-        <span class="results-count" id="results-count">Cargando catálogo...</span>
+    <!-- SECCIÓN DE DEMOS VISUALES ESTÁTICAS -->
+    <section id="seccion-demos" style="margin: 4.5rem 0;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 1.5rem; border-bottom: 1.5px dashed var(--bp-card-border); padding-bottom: 1rem; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <span class="blueprint-stamp">SECCIÓN 02 // VISTAS PREVIAS</span>
+          <h2 style="font-size: 1.75rem; color: #fff; margin-top: 0.4rem;">Maquetas & Demos Visuales</h2>
+        </div>
+        <div style="font-family: var(--font-tech); font-size: 0.8rem; color: var(--ink-amber);">
+          [ AVISO: MAQUETAS 100% ESTÁTICAS // PROTECCIÓN DE CÓDIGO FUENTE ]
+        </div>
       </div>
 
-      <!-- Dynamic Grid -->
-      <div class="services-grid" id="services-grid">
-        <!-- Injected via catalogue.js -->
+      <div style="background: rgba(251, 191, 36, 0.08); border-left: 4px solid var(--ink-amber); padding: 1rem 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+        <p style="font-size: 0.9rem; color: #fef3c7; margin: 0; line-height: 1.6;">
+          <strong>Nota de Protección Intelectual:</strong> Las siguientes demostraciones son prototipos estáticos de interfaz de usuario. No contienen la lógica de negocio ni exponen el código fuente real del software final desarrollado para nuestros clientes y grupo madre.
+        </p>
       </div>
+
+      <!-- Injected via catalogue.js -->
+      <div class="demos-grid" id="demos-grid"></div>
     </section>
 
   </main>
 
-  <!-- Service Details Modal Dialog (Native HTML5 <dialog>) -->
-  <dialog id="service-modal" class="custom-modal" aria-labelledby="modal-service-title">
-    <div class="modal-header">
-      <span class="badge badge-primary">Especificación Técnica</span>
-      <button class="modal-close-btn modal-close-trigger" aria-label="Cerrar modal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-    <div class="modal-body" id="modal-service-details">
-      <!-- Dynamic details rendered via modal.js -->
-    </div>
-    <div class="modal-footer">
-      <button class="btn btn-secondary modal-close-trigger">Cerrar</button>
-      <button class="btn btn-primary" id="modal-action-quote-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-        </svg>
-        Cotizar Este Servicio
-      </button>
-    </div>
-  </dialog>
-
-  <!-- Contact & Quote Request Modal Dialog -->
-  <dialog id="quote-modal" class="custom-modal" aria-labelledby="modal-quote-title">
-    <div class="modal-header">
-      <div style="display: flex; align-items: center; gap: 0.5rem;">
-        <span class="badge badge-cyan">Atención Comercial & Técnica</span>
-      </div>
-      <button class="modal-close-btn modal-close-trigger" aria-label="Cerrar modal">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-    <form id="quote-form" method="dialog">
-      <div class="modal-body">
-        <h2 id="modal-quote-title" class="modal-title" style="margin-bottom: 0.5rem;">Solicitud de Cotización & Consulta</h2>
-        <p class="modal-desc" style="margin-bottom: 1.5rem;">
-          Complete este formulario para coordinar requerimientos técnicos, cotizaciones personalizadas o soporte con nuestros especialistas.
-        </p>
-
-        <div class="form-group">
-          <label class="form-label" for="quote-name">Nombre y Apellidos *</label>
-          <input type="text" id="quote-name" class="form-input" placeholder="Ej. Carlos Mendoza" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="quote-contact">Correo Electrónico o WhatsApp *</label>
-          <input type="text" id="quote-contact" class="form-input" placeholder="Ej. contacto@empresa.com o +1 555 123 4567" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="quote-type">Perfil de Solicitante *</label>
-          <select id="quote-type" class="form-select" required>
-            <option value="Cliente">Cliente Final / Empresa</option>
-            <option value="Contratista">Contratista Tecnológico / Aliado</option>
-            <option value="Consultoría">Consultoría Técnica Independiente</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="quote-service-select">Servicio Seleccionado</label>
-          <select id="quote-service-select" class="form-select">
-            <!-- Populated via modal.js -->
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label" for="quote-notes">Detalles del Proyecto o Requerimiento</label>
-          <textarea id="quote-notes" class="form-textarea" placeholder="Describa el alcance, número de usuarios, características de servidor o plazos requeridos..."></textarea>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary modal-close-trigger">Cancelar</button>
-        <button type="submit" class="btn btn-primary">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="22" y1="2" x2="11" y2="13"></line>
-            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
-          </svg>
-          Enviar Solicitud
-        </button>
-      </div>
-    </form>
-  </dialog>
-
   <!-- Site Footer -->
-  <footer class="footer">
+  <footer class="footer" style="border-top: 1.5px dashed var(--bp-card-border); background: #080d16;">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="brand">
-            <div class="brand-icon">
+            <div class="brand-icon" style="background: var(--ink-blue); color: #0b1320;">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
+                <polyline points="4 7 4 4 20 4 20 7"></polyline>
+                <line x1="9" y1="20" x2="15" y2="20"></line>
+                <line x1="12" y1="4" x2="12" y2="20"></line>
               </svg>
             </div>
             <div class="brand-text">Services<span>Catalogue</span></div>
           </div>
-          <p>
-            Plataforma integral de soluciones informáticas, desarrollo full-stack, infraestructura en la nube, servidores y comunicaciones omnicanal para potenciar el crecimiento de empresas y contratistas.
+          <p style="font-size: 0.88rem; color: var(--ink-muted); margin-top: 1rem; line-height: 1.6;">
+            Cuaderno técnico de asesoramiento, desarrollo web y administración de servidores. Construido bajo principios de transparencia, honestidad y contacto directo.
           </p>
         </div>
 
         <div class="footer-col">
-          <h4>Soluciones Principales</h4>
+          <h4 style="font-family: var(--font-tech); color: var(--ink-cyan);">CANAL DIRECTO</h4>
           <ul class="footer-links">
-            <li><a href="#" onclick="document.querySelector('[data-category=web]').click(); return false;">Servicios Web</a></li>
-            <li><a href="#" onclick="document.querySelector('[data-category=software]').click(); return false;">Software a Medida</a></li>
-            <li><a href="#" onclick="document.querySelector('[data-category=servidores]').click(); return false;">Servidores & SysAdmin</a></li>
-            <li><a href="#" onclick="document.querySelector('[data-category=vps]').click(); return false;">VPS NVMe de Alto Rendimiento</a></li>
-            <li><a href="#" onclick="document.querySelector('[data-category=ccm]').click(); return false;">CCM & Telefonía VoIP</a></li>
-            <li><a href="#" onclick="document.querySelector('[data-category=dominios]').click(); return false;">Dominios & DNS Seguro</a></li>
+            <li><a href="https://wa.me/5355608402" target="_blank" rel="noopener noreferrer">WhatsApp: +53 55608402</a></li>
+            <li><a href="#hero-section">Tutoría Inicial Gratuita</a></li>
+            <li><a href="#seccion-cuba">Atención Especializada en Cuba</a></li>
+            <li><a href="#seccion-demos">Maquetas Visuales</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h4>Garantía & Soporte</h4>
+          <h4 style="font-family: var(--font-tech); color: var(--ink-cyan);">REGLAS DE SERVICIO</h4>
           <ul class="footer-links">
-            <li><a href="#hero-section">SLA de 99.9%</a></li>
-            <li><a href="#hero-section">Mesa de Ayuda L1/L2/L3</a></li>
-            <li><a href="#hero-section">Auditoría & Hardening</a></li>
-            <li><a href="javascript:void(0)" onclick="window.openQuoteModal()">Canal para Contratistas</a></li>
+            <li style="color: var(--ink-muted); font-size: 0.85rem;">• Asesoría inicial: 100% Gratis</li>
+            <li style="color: var(--ink-muted); font-size: 0.85rem;">• Montaje Hostinger/VPS: Pago previo</li>
+            <li style="color: var(--ink-muted); font-size: 0.85rem;">• Mantenimiento: Póliza mensual</li>
+            <li style="color: var(--ink-muted); font-size: 0.85rem;">• Código fuente protegido</li>
           </ul>
         </div>
       </div>
 
-      <div class="footer-bottom">
+      <div class="footer-bottom" style="border-top: 1px dashed var(--bp-card-border);">
         <p>&copy; 2026 Services Catalogue. Todos los derechos reservados.</p>
-        <p>Desarrollado con estándares web modernos, HTML5 semántico y CSS Vanilla.</p>
+        <p style="font-family: var(--font-tech); font-size: 0.75rem; color: var(--ink-muted);">
+          Diseño Blueprint & Plano de Arquitecto // Sin dependencias externas
+        </p>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
-  <script src="js/modal.js"></script>
   <script src="js/catalogue.js"></script>
 </body>
 </html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maqueta Visual: Catálogo Digital de Productos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/blueprint.css">
+  <style>
+    .watermark-banner {
+      background: #f59e0b;
+      color: #000;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-family: var(--font-tech);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .product-card {
+      background: rgba(13, 27, 42, 0.9);
+      border: 1px solid var(--bp-card-border);
+      border-radius: 12px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watermark-banner">
+    ⚠️ DEMO VISUAL ESTÁTICA // MOCKUP PARA APRECIACIÓN DE DISEÑO // SIN CONEXIÓN A DATOS REALES
+  </div>
+
+  <div class="preview-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="../index.html" class="btn-blueprint">← Volver al Catálogo Principal</a>
+      <span class="blueprint-stamp">REF: MOCKUP-STORE-02</span>
+    </div>
+
+    <div class="blueprint-card">
+      <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Catálogo Digital con Pedido por WhatsApp (Muestra)</h2>
+      <p style="color: var(--ink-muted); font-size: 0.9rem;">
+        Ideal para comercios, talleres y distribuidores que desean exhibir sus productos o repuestos de forma limpia y recibir el pedido formal directo en su WhatsApp, sin enredos con bancos o pasarelas extranjeras.
+      </p>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div style="height: 120px; background: rgba(0,0,0,0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-tech); color: var(--ink-muted); margin-bottom: 1rem;">
+            [ IMAGEN MUESTRA ]
+          </div>
+          <span style="font-size: 0.75rem; color: var(--ink-cyan); font-family: var(--font-tech);">CATEGORÍA A</span>
+          <h4 style="font-size: 1.1rem; color: #fff; margin: 0.25rem 0 0.5rem;">Kit de Sensores Industriales</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 1rem; flex-grow: 1;">
+            Muestra de descripción técnica con especificaciones y disponibilidad inmediata.
+          </p>
+          <button class="btn-whatsapp" style="font-size: 0.85rem; padding: 0.5rem;" onclick="alert('Esta es una maqueta estática de demostración.')">
+            Pedir por WhatsApp (Demo)
+          </button>
+        </div>
+
+        <div class="product-card">
+          <div style="height: 120px; background: rgba(0,0,0,0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-tech); color: var(--ink-muted); margin-bottom: 1rem;">
+            [ IMAGEN MUESTRA ]
+          </div>
+          <span style="font-size: 0.75rem; color: var(--ink-cyan); font-family: var(--font-tech);">CATEGORÍA B</span>
+          <h4 style="font-size: 1.1rem; color: #fff; margin: 0.25rem 0 0.5rem;">Módulo de Monitoreo Remoto</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 1rem; flex-grow: 1;">
+            Muestra de producto con opción de solicitud de cotización por volumen.
+          </p>
+          <button class="btn-whatsapp" style="font-size: 0.85rem; padding: 0.5rem;" onclick="alert('Esta es una maqueta estática de demostración.')">
+            Pedir por WhatsApp (Demo)
+          </button>
+        </div>
+
+        <div class="product-card">
+          <div style="height: 120px; background: rgba(0,0,0,0.4); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: var(--font-tech); color: var(--ink-muted); margin-bottom: 1rem;">
+            [ IMAGEN MUESTRA ]
+          </div>
+          <span style="font-size: 0.75rem; color: var(--ink-cyan); font-family: var(--font-tech);">CATEGORÍA C</span>
+          <h4 style="font-size: 1.1rem; color: #fff; margin: 0.25rem 0 0.5rem;">Cámara de Vigilancia IP</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin-bottom: 1rem; flex-grow: 1;">
+            Soporta visualización en red local o acceso remoto mediante VPN segura.
+          </p>
+          <button class="btn-whatsapp" style="font-size: 0.85rem; padding: 0.5rem;" onclick="alert('Esta es una maqueta estática de demostración.')">
+            Pedir por WhatsApp (Demo)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://wa.me/5355608402?text=Hola%20Fredo!%20Vi%20la%20maqueta%20del%20catalogo%20de%20productos%20y%20quiero%20cotizar%20uno%20para%20mi%20negocio." class="btn-whatsapp">
+        Quiero un Catálogo Digital para mi Negocio
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>

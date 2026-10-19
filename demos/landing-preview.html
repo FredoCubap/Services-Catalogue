@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maqueta Visual: Landing Page de Servicios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles/main.css">
+  <link rel="stylesheet" href="../styles/blueprint.css">
+  <style>
+    .watermark-banner {
+      background: #f59e0b;
+      color: #000;
+      text-align: center;
+      padding: 0.5rem 1rem;
+      font-weight: 700;
+      font-size: 0.85rem;
+      font-family: var(--font-tech);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .preview-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="watermark-banner">
+    ⚠️ DEMO VISUAL ESTÁTICA // MOCKUP PARA APRECIACIÓN DE DISEÑO // SIN CONEXIÓN A DATOS REALES
+  </div>
+
+  <div class="preview-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+      <a href="../index.html" class="btn-blueprint">← Volver al Catálogo Principal</a>
+      <span class="blueprint-stamp">REF: MOCKUP-LANDING-03</span>
+    </div>
+
+    <div class="blueprint-card" style="text-align: center; padding: 3rem 2rem;">
+      <span class="blueprint-stamp" style="margin-bottom: 1rem;">MUESTRA DE LANDING PAGE CORPORATIVA</span>
+      <h1 style="font-size: 2.2rem; margin: 1rem 0; color: #fff;">
+        Servicios Profesionales de Ingeniería & Obras
+      </h1>
+      <p style="max-width: 650px; margin: 0 auto 2rem; color: var(--ink-muted); font-size: 1.05rem; line-height: 1.6;">
+        Estructura optimizada para captar clientes desde el primer segundo: propuesta de valor contundente, testimonios reales, mapa de cobertura y contacto inmediato.
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-whatsapp" onclick="alert('Esta es una maqueta de muestra.')">
+          Botón Principal de Llamado a la Acción
+        </button>
+        <button class="btn-blueprint" onclick="alert('Esta es una maqueta de muestra.')">
+          Conocer Casos de Éxito
+        </button>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 3.5rem; text-align: left;">
+        <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed var(--bp-card-border);">
+          <h4 style="color: var(--ink-cyan); margin-bottom: 0.5rem;">Carga en &lt; 1 Segundo</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">Diseño liviano para conexiones móviles lentas.</p>
+        </div>
+        <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed var(--bp-card-border);">
+          <h4 style="color: var(--ink-emerald); margin-bottom: 0.5rem;">SEO & Google Ready</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">Etiquetado semántico para posicionamiento.</p>
+        </div>
+        <div style="padding: 1.25rem; background: rgba(0,0,0,0.3); border-radius: 8px; border: 1px dashed var(--bp-card-border);">
+          <h4 style="color: var(--ink-amber); margin-bottom: 0.5rem;">Cero Caídas</h4>
+          <p style="font-size: 0.85rem; color: var(--ink-muted); margin: 0;">Alojado en servidores con CDN global.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://wa.me/5355608402?text=Hola%20Fredo!%20Vi%20la%20maqueta%20de%20la%20landing%20page%20y%20quiero%20cotizar%20una%20para%20mis%20servicios." class="btn-whatsapp">
+        Quiero una Landing Page Profesional para mis Servicios
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
