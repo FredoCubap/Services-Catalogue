@@ -1,0 +1,61 @@
+name: Protect Main - Block Direct Pushes
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  guard:
+    name: Verificar que el push provenga de un Pull Request
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+      pull-requests: read
+
+    steps:
+      - name: Buscar PR asociado al commit
+        id: check
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! PR_NUMBER=$(gh api \
+            "repos/${{ github.repository }}/commits/${{ github.sha }}/pulls" \
+            -H "Accept: application/vnd.github+json" \
+            --jq '.[0].number // empty'); then
+            echo "::warning::No se pudo consultar la API de PRs; se trata como push directo"
+            PR_NUMBER=""
+          fi
+
+          if ! [[ "$PR_NUMBER" =~ ^[0-9]+$ ]]; then
+            echo "is_direct_push=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "is_direct_push=false" >> "$GITHUB_OUTPUT"
+            echo "pr_number=$PR_NUMBER" >> "$GITHUB_OUTPUT"
+            echo "Push verificado: proviene del PR #${PR_NUMBER}"
+          fi
+
+      - name: Crear issue de alerta
+        if: steps.check.outputs.is_direct_push == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --repo "${{ github.repository }}" \
+            --title "Alerta: Push directo a main detectado — ${{ github.actor }}" \
+            --body "Se detectó un push directo a la rama \`main\` sin pasar por un Pull Request formal.
+
+          | Campo | Valor |
+          |---|---|
+          | **Autor** | \`${{ github.actor }}\` |
+          | **Commit** | \`${{ github.sha }}\` |
+          | **Mensaje** | ${{ github.event.head_commit.message }} |
+          | **Fecha** | ${{ github.event.head_commit.timestamp }} |
+
+          **Acción requerida:** Todo cambio debe entrar a través de ramas de trabajo y Pull Requests para garantizar la estabilidad de producción y el catálogo en GitHub Pages."
+
+      - name: Fallar el workflow
+        if: steps.check.outputs.is_direct_push == 'true'
+        run: |
+          echo "::error title=Push directo bloqueado::El usuario '${{ github.actor }}' realizó un push directo a main sin Pull Request."
+          exit 1

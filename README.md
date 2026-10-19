@@ -112,8 +112,12 @@ Dado que es un sitio estático puro, puedes alojarlo gratis en **GitHub Pages**:
 
 ---
 
-## 🤝 Contribuciones & Extensiones
+## 🤝 Contribuciones & Reglas de Desarrollo
 
-Para agregar o modificar servicios:
-1. Edita el archivo `js/data.js` agregando un nuevo objeto al arreglo `SERVICES_DATA`.
-2. Las categorías, contadores, etiquetas y tarjetas se actualizarán de forma automática.
+Este repositorio sigue directrices estrictas de calidad, gobernanza y ramas atómicas:
+
+- Consulta **[`CONTRIBUTING.md`](CONTRIBUTING.md)** para la convención de ramas (`<prefijo>/<ref>-descripcion`), commits atómicos (`<prefijo>: <verbo en 3ª persona>`), rebase workflow y límite de 500 líneas por PR.
+- Consulta **[`AGENTS.md`](AGENTS.md)** para detalles de arquitectura técnica y la lista de restricciones (*"Nunca"*).
+- Todo Pull Request utiliza la plantilla obligatoria en [`.github/pull_request_template.md`](.github/pull_request_template.md).
+- La rama `main` cuenta con protección automatizada para bloquear pushes directos sin PR.
+
