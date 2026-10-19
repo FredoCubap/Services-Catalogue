@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Servicios & Soluciones Tecnológicas</title>
+  <meta name="description" content="Catálogo profesional de servicios web, desarrollo de software, soluciones remotas, administración de servidores, VPS, CCM y gestión de dominios para clientes y contratistas.">
+  <meta name="keywords" content="servicios web, desarrollo de software, soluciones remotas, servidores cloud, VPS NVMe, CCM, telefonía IP, gestión de dominios, DNS, soporte para contratistas">
+  <meta name="theme-color" content="#0a0e1a">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Catálogo de Servicios & Soluciones Tecnológicas">
+  <meta property="og:description" content="Infraestructura, desarrollo y servicios de TI de alto nivel para empresas y contratistas.">
+  <meta property="og:type" content="website">
+
+  <!-- Google Fonts: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/components.css">
+  <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="navbar" id="top-nav">
+    <div class="container nav-container">
+      <a href="#" class="brand" aria-label="Inicio del Catálogo de Servicios">
+        <div class="brand-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+            <polyline points="2 17 12 22 22 17"></polyline>
+            <polyline points="2 12 12 17 22 12"></polyline>
+          </svg>
+        </div>
+        <div class="brand-text">Services<span>Catalogue</span></div>
+      </a>
+
+      <div class="nav-actions">
+        <button class="btn btn-outline-cyan btn-sm" onclick="window.openQuoteModal()" id="nav-quote-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+          </svg>
+          Solicitar Cotización
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero-section">
+    <div class="container">
+      <div class="hero-pill">
+        <span class="badge badge-primary">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <circle cx="12" cy="12" r="10"></circle>
+          </svg>
+          Catálogo Oficial TI & Soluciones Cloud
+        </span>
+      </div>
+
+      <h1 class="hero-title">
+        Soluciones Tecnológicas & Servicios <span class="text-gradient">Especializados</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Infraestructura cloud, desarrollo de software, plataformas remotas, servidores de alto rendimiento y comunicaciones corporativas diseñadas para clientes y contratistas tecnológicos.
+      </p>
+
+      <!-- Live Highlights / Stats -->
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-value text-gradient">99.9%</span>
+          <span class="stat-label">Disponibilidad SLA</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">24/7</span>
+          <span class="stat-label">Monitoreo & Soporte</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value text-gradient">&lt; 30m</span>
+          <span class="stat-label">Respuesta HelpDesk</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-value">100%</span>
+          <span class="stat-label">Cifrado & Seguridad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalogue Controls & Main Listing -->
+  <main class="container" id="main-content">
+    
+    <!-- Filter Controls Bar -->
+    <section class="catalogue-controls" aria-label="Controles de búsqueda y filtros del catálogo">
+      <div class="search-audience-row">
+        <!-- Search Input -->
+        <div class="search-box-wrapper">
+          <span class="search-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </span>
+          <input 
+            type="search" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Buscar por tecnología, servicio, VPS, Linux, API..." 
+            aria-label="Buscar en el catálogo de servicios"
+          >
+          <span class="search-shortcut" title="Presione la tecla / para buscar">/</span>
+        </div>
+
+        <!-- Target Audience Toggle -->
+        <div class="audience-toggle" role="group" aria-label="Filtrar por perfil de usuario">
+          <button class="audience-btn active" data-audience="all">Todos</button>
+          <button class="audience-btn" data-audience="clients">Para Clientes</button>
+          <button class="audience-btn" data-audience="contractors">Para Contratistas</button>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills -->
+      <nav class="category-filters" id="category-filters" aria-label="Filtro por categoría de servicio">
+        <!-- Rendered dynamically by catalogue.js -->
+      </nav>
+    </section>
+
+    <!-- Services Results Section -->
+    <section aria-label="Listado de servicios disponibles">
+      <div class="results-header">
+        <span class="results-count" id="results-count">Cargando catálogo...</span>
+      </div>
+
+      <!-- Dynamic Grid -->
+      <div class="services-grid" id="services-grid">
+        <!-- Injected via catalogue.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Service Details Modal Dialog (Native HTML5 <dialog>) -->
+  <dialog id="service-modal" class="custom-modal" aria-labelledby="modal-service-title">
+    <div class="modal-header">
+      <span class="badge badge-primary">Especificación Técnica</span>
+      <button class="modal-close-btn modal-close-trigger" aria-label="Cerrar modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body" id="modal-service-details">
+      <!-- Dynamic details rendered via modal.js -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary modal-close-trigger">Cerrar</button>
+      <button class="btn btn-primary" id="modal-action-quote-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+        Cotizar Este Servicio
+      </button>
+    </div>
+  </dialog>
+
+  <!-- Contact & Quote Request Modal Dialog -->
+  <dialog id="quote-modal" class="custom-modal" aria-labelledby="modal-quote-title">
+    <div class="modal-header">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="badge badge-cyan">Atención Comercial & Técnica</span>
+      </div>
+      <button class="modal-close-btn modal-close-trigger" aria-label="Cerrar modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <form id="quote-form" method="dialog">
+      <div class="modal-body">
+        <h2 id="modal-quote-title" class="modal-title" style="margin-bottom: 0.5rem;">Solicitud de Cotización & Consulta</h2>
+        <p class="modal-desc" style="margin-bottom: 1.5rem;">
+          Complete este formulario para coordinar requerimientos técnicos, cotizaciones personalizadas o soporte con nuestros especialistas.
+        </p>
+
+        <div class="form-group">
+          <label class="form-label" for="quote-name">Nombre y Apellidos *</label>
+          <input type="text" id="quote-name" class="form-input" placeholder="Ej. Carlos Mendoza" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quote-contact">Correo Electrónico o WhatsApp *</label>
+          <input type="text" id="quote-contact" class="form-input" placeholder="Ej. contacto@empresa.com o +1 555 123 4567" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quote-type">Perfil de Solicitante *</label>
+          <select id="quote-type" class="form-select" required>
+            <option value="Cliente">Cliente Final / Empresa</option>
+            <option value="Contratista">Contratista Tecnológico / Aliado</option>
+            <option value="Consultoría">Consultoría Técnica Independiente</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quote-service-select">Servicio Seleccionado</label>
+          <select id="quote-service-select" class="form-select">
+            <!-- Populated via modal.js -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="quote-notes">Detalles del Proyecto o Requerimiento</label>
+          <textarea id="quote-notes" class="form-textarea" placeholder="Describa el alcance, número de usuarios, características de servidor o plazos requeridos..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-close-trigger">Cancelar</button>
+        <button type="submit" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+          Enviar Solicitud
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Site Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <div class="brand-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <div class="brand-text">Services<span>Catalogue</span></div>
+          </div>
+          <p>
+            Plataforma integral de soluciones informáticas, desarrollo full-stack, infraestructura en la nube, servidores y comunicaciones omnicanal para potenciar el crecimiento de empresas y contratistas.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Soluciones Principales</h4>
+          <ul class="footer-links">
+            <li><a href="#" onclick="document.querySelector('[data-category=web]').click(); return false;">Servicios Web</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=software]').click(); return false;">Software a Medida</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=servidores]').click(); return false;">Servidores & SysAdmin</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=vps]').click(); return false;">VPS NVMe de Alto Rendimiento</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=ccm]').click(); return false;">CCM & Telefonía VoIP</a></li>
+            <li><a href="#" onclick="document.querySelector('[data-category=dominios]').click(); return false;">Dominios & DNS Seguro</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Garantía & Soporte</h4>
+          <ul class="footer-links">
+            <li><a href="#hero-section">SLA de 99.9%</a></li>
+            <li><a href="#hero-section">Mesa de Ayuda L1/L2/L3</a></li>
+            <li><a href="#hero-section">Auditoría & Hardening</a></li>
+            <li><a href="javascript:void(0)" onclick="window.openQuoteModal()">Canal para Contratistas</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Services Catalogue. Todos los derechos reservados.</p>
+        <p>Desarrollado con estándares web modernos, HTML5 semántico y CSS Vanilla.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/catalogue.js"></script>
+</body>
+</html>
