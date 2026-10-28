@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demo — Catálogo de Productos</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Catálogo de Productos</h1>
+    <p class="subtitle">Demo visual — datos de ejemplo (sin conexión a sistema real)</p>
+  </header>
+
+  <main class="container">
+    <section class="filters">
+      <input type="text" id="search" placeholder="Buscar por nombre o SKU..." />
+      <select id="category">
+        <option value="">Todas las categorías</option>
+      </select>
+      <select id="currency">
+        <option value="CUP">CUP</option>
+        <option value="MLC">MLC</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+      </select>
+    </section>
+
+    <section class="products" id="products"></section>
+
+    <aside class="cart" id="cart">
+      <h2>Carrito</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total">
+        <strong>Total: <span id="cart-total">0.00</span> <span id="cart-currency">CUP</span></strong>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="footer">
+    <p>Demo estático — SISTEMA_GESTIÓN. Datos de ejemplo. Versión: 1.0.0</p>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/catalogue.js"></script>
+</body>
+</html>
